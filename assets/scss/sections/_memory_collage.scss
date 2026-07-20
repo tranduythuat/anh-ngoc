@@ -1,0 +1,90 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.memory-collage {
+    width: 100%;
+    @include flex-center;
+    padding: 5% 6% 0;
+
+    .content {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 500 / 580;
+        position: relative;
+        perspective: 1000px;
+        .box-imgs {
+            max-width: 280px;
+            position: absolute;
+            aspect-ratio: 298 / 278;
+            background-color: #f4e4e9;
+            padding-top: 3%;
+            img {
+                width: 90%;
+                // height: 100%;
+                aspect-ratio: 5 / 4;
+                object-fit: cover;
+            }
+        }
+        .box-imgs:nth-child(2) {
+            top: 5%;
+            left: 0;
+            transform: rotate(5deg);
+            img {
+                object-position: 100% 39%;
+            }
+        }
+
+        .box-imgs:nth-child(3) {
+            right: 5%;
+            bottom: 5%;
+            transform: rotate(-5deg);
+            img {
+                object-position: 100% 77%;
+            }
+        }
+        img.flower-collage {
+            position: absolute;
+        }
+
+        img.flower-collage-1 {
+            width: 247px;
+            height: auto;
+            top: -11%;
+            right: 14%;
+        }
+
+        img.flower-collage-2 {
+            width: 203px;
+            height: auto;
+            top: 30%;
+            left: 3%;
+        }
+
+        img.flower-collage-3 {
+            width: 111px;
+            height: auto;
+            top: -4%;
+            right: 26%;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .content {
+            .box-imgs {
+                max-width: calc((280 / 500) * 100vw);
+            }
+    
+            img.flower-collage-1 {
+                width: calc((247 / 500) * 100vw);
+            }
+    
+            img.flower-collage-2 {
+                width: calc((203 / 500) * 100vw);
+            }
+
+            img.flower-collage-3 {
+                width: calc((111 / 500) * 100vw);
+            }
+        }
+    }
+}

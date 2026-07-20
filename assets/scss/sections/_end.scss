@@ -1,0 +1,44 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.end {
+    width: 100%;
+
+    .content {
+        width: 100%;
+        color: white;
+        padding: 0 8%;
+        font-family: $font-gotham;
+        p {
+            font-size: 9.11px;
+            line-height: 1.8;
+            text-transform: uppercase;
+        }
+
+        .importan {
+            font-weight: 700;
+        }
+
+        .divider {
+            margin: 10% 0;
+            img {
+                width: 8.5px;
+                height: auto;
+            }
+        }
+    }
+
+    @media (max-width: 500px) {
+        .content {
+            p {
+                font-size: calc((9.11 / 500) * 100vw);
+            }
+
+            .divider {
+                img {
+                    width: calc((8.5 / 500) * 100vw);
+                }
+            }
+        }
+    }
+}

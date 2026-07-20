@@ -1,0 +1,200 @@
+
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.invite {
+    width: 100%;
+    background: url('../../assets/images/flowers_bg.GIF') repeat top / contain;
+    .content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        color: #000;
+        font-family: $font-gotham;
+        padding-top: 10%;
+
+        .ivitation-img {
+            max-width: 323px;
+            width: 100%;
+            margin-bottom: 8%;
+            img {
+                width: 100%;
+                height: auto;
+            }
+
+        }
+        .invite-text {
+            text-transform: uppercase;
+            .bold {
+                font-weight: bold;
+            }
+            .thin {
+                margin-bottom: 5%;
+            }
+            .vn {
+                line-height: 1.5;
+                margin-bottom: 8%;
+                span.bold {
+                    font-family: $font-gothamBold;
+                }
+            }
+        }
+
+        .photo-box {
+            position: relative;
+            perspective: 1000px;
+
+            .img-box {
+                max-width: 243px;
+                width: 100%;
+                aspect-ratio: 243 / 340;
+                margin: 8% 0;
+                overflow: hidden;
+                img.main {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center 31%;
+                }
+            }
+
+            img.flower-01 {
+                width: 100%;
+                max-width: 75px;
+                height: auto;
+                position: absolute;
+                right: -9%;
+                bottom: 2%;
+            }
+        }
+
+        .date-block {
+            text-transform: uppercase;
+            .date-main {
+                font-family: $font-gothamBold;
+                font-size: 33px;
+                margin-top: 34%;               
+            }
+
+            .date-sub {
+                margin-top: 2%;
+                font-size: 15px;
+            }
+        }
+
+        .location-block {
+            margin-top: 10%;
+            .label {
+                line-height: 1.5;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 4%;
+            }
+            .name {
+                font-family: $font-main;
+                font-size: 33.5px;
+                font-weight: 300;
+                color: $title-color;
+                line-height: 1.5;
+            }
+
+            .address {
+                font-style: italic;
+                margin: 3% 0;
+            }
+            .map-img {
+                cursor: pointer;
+                img {
+                    width: 100%;
+                    max-width: 444px;
+                    height: auto;
+                }
+            }
+        }
+
+        .btn-wrap {
+            margin-top: 5%;
+            .map-btn {
+                display: block;
+                text-decoration: none;
+                color: #fff;
+                font-size: 13px;
+                font-family: $font-gotham;
+                width: 158px;
+                padding: 1% 0;
+                background-color: $title-color;
+                border-radius: 15px;
+            }
+        }
+
+        .text-size-10 {
+            font-size: 10px;
+        }
+
+        .text-size-9 {
+            font-size: 9.11px;
+        }
+
+        .text-size-7 {
+            font-size: 7px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .content {
+            .ivitation-img {
+                max-width: calc((323 / 500) * 100vw);
+            }
+
+            .photo-box {
+                max-width: calc((243 / 500) * 100vw);
+                img.flower-01 {
+                    width:  calc((75 / 500) * 100vw);
+                }
+            }
+
+            .date-block {
+                .date-main {
+                    font-size: calc((33 / 500) * 100vw);
+                }
+                .date-sub {
+                    font-size: calc((12 / 500) * 100vw);
+                }
+    
+            }
+
+            .divider-box {
+                max-width: calc((9 / 500) * 100vw);
+            }
+    
+
+            .location-block {
+                .name {
+                    font-size: calc((33.5 / 500) * 100vw);
+                }
+            }
+    
+            .btn-wrap {
+                .map-btn {
+                    font-size: calc((13 / 500) * 100vw);
+                    width: calc((158 / 500) * 100vw);
+                }
+            }
+    
+            .text-size-10 {
+                font-size: calc((10 / 500) * 100vw);
+            }
+
+            .text-size-9 {
+                font-size: calc((9.11 / 500) * 100vw);
+            }
+    
+            .text-size-7 {
+                font-size: calc((7 / 500) * 100vw);
+            }
+        }
+    }
+}

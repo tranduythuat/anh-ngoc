@@ -1,0 +1,1125 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "SVN-GothamBold";
+  src: url("../../assets/fonts/SVN-GothamBold.woff2") format("woff2"), url("../fonts/SVN-GothamBold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SVN-GothamLight";
+  src: url("../../assets/fonts/SVN-Gotham Light.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SVN-GothamBook";
+  src: url("../../assets/fonts/SVN-GothamBook.woff2") format("woff2"), url("../fonts/SVN-GothamBook.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Hikary";
+  src: url("../../assets/fonts/1FTV-Eastin-Hikary.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MTDPortrait";
+  src: url("../../assets/fonts/MTD-Portrait-Script-Bounce.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+  font-size: 12px;
+  margin: 0;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.container {
+  max-width: 500px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background: url("../../assets/images/main_bg.webp") no-repeat center/cover;
+}
+
+/* music */
+.player {
+  position: fixed;
+  bottom: 10px;
+  right: 1%;
+  max-width: 55px;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  z-index: 9999;
+  border: 1px solid var(--text-title-color);
+}
+
+.player #iconSvg {
+  width: 100%;
+  height: 100%;
+  fill: var(--text-title-color);
+}
+
+.spin {
+  animation: spin 4s linear infinite;
+}
+
+/* Định nghĩa hoạt ảnh xoay */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 500px) {
+  .player {
+    max-width: 11vw;
+  }
+}
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f09;
+  color: white;
+  padding: 1rem;
+}
+
+.image-wrapper {
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0;
+}
+.image-wrapper img {
+  width: 320px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.animate-flip, .animate-flip-yoyo {
+  transform-origin: left center;
+  transform: rotateY(-120deg) scale(0.9);
+  opacity: 0;
+  filter: brightness(0.6);
+  backface-visibility: hidden;
+  transition: none;
+}
+
+.animate-flip.active, .animate-flip-yoyo.active {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  top: 100px;
+  border-radius: 12px;
+}
+
+.red {
+  background: #e74c3c;
+}
+
+.blue {
+  background: #3498db;
+}
+
+.green {
+  background: #2ecc71;
+}
+
+.hero {
+  width: 100%;
+}
+.hero .content {
+  aspect-ratio: 500/750;
+  background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/TuanAnh-HongNgoc/1.webp") no-repeat 55% 72%/200%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  position: relative;
+  perspective: 1000px;
+}
+.hero .content .couple-name {
+  width: 300px;
+  font-size: 46px;
+  font-family: "MTDPortrait", sans-serif;
+  transform: rotate(-5deg);
+  margin-top: 5%;
+}
+.hero .content .couple-name .husband, .hero .content .couple-name .wife {
+  padding: 8% 2%;
+}
+.hero .content .couple-name .husband {
+  text-align: right;
+}
+.hero .content .couple-name .wife {
+  text-align: left;
+  position: relative;
+  top: -15%;
+}
+.hero .content img.couple_name {
+  width: 100%;
+  max-width: 376px;
+  position: absolute;
+  top: 5%;
+  left: 14%;
+}
+@media (max-width: 500px) {
+  .hero .content img.couple_name {
+    max-width: 75.2vw;
+  }
+}
+
+.invite {
+  width: 100%;
+  background: url("../../assets/images/flowers_bg.GIF") repeat top/contain;
+}
+.invite .content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #000;
+  font-family: "SVN-GothamBook", sans-serif;
+  padding-top: 10%;
+}
+.invite .content .ivitation-img {
+  max-width: 323px;
+  width: 100%;
+  margin-bottom: 8%;
+}
+.invite .content .ivitation-img img {
+  width: 100%;
+  height: auto;
+}
+.invite .content .invite-text {
+  text-transform: uppercase;
+}
+.invite .content .invite-text .bold {
+  font-weight: bold;
+}
+.invite .content .invite-text .thin {
+  margin-bottom: 5%;
+}
+.invite .content .invite-text .vn {
+  line-height: 1.5;
+  margin-bottom: 8%;
+}
+.invite .content .invite-text .vn span.bold {
+  font-family: "SVN-gothamBold", sans-serif;
+}
+.invite .content .photo-box {
+  position: relative;
+  perspective: 1000px;
+}
+.invite .content .photo-box .img-box {
+  max-width: 243px;
+  width: 100%;
+  aspect-ratio: 243/340;
+  margin: 8% 0;
+  overflow: hidden;
+}
+.invite .content .photo-box .img-box img.main {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 31%;
+}
+.invite .content .photo-box img.flower-01 {
+  width: 100%;
+  max-width: 75px;
+  height: auto;
+  position: absolute;
+  right: -9%;
+  bottom: 2%;
+}
+.invite .content .date-block {
+  text-transform: uppercase;
+}
+.invite .content .date-block .date-main {
+  font-family: "SVN-gothamBold", sans-serif;
+  font-size: 33px;
+  margin-top: 34%;
+}
+.invite .content .date-block .date-sub {
+  margin-top: 2%;
+  font-size: 15px;
+}
+.invite .content .location-block {
+  margin-top: 10%;
+}
+.invite .content .location-block .label {
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4%;
+}
+.invite .content .location-block .name {
+  font-family: "MTDPortrait", sans-serif;
+  font-size: 33.5px;
+  font-weight: 300;
+  color: #dba7b2;
+  line-height: 1.5;
+}
+.invite .content .location-block .address {
+  font-style: italic;
+  margin: 3% 0;
+}
+.invite .content .location-block .map-img {
+  cursor: pointer;
+}
+.invite .content .location-block .map-img img {
+  width: 100%;
+  max-width: 444px;
+  height: auto;
+}
+.invite .content .btn-wrap {
+  margin-top: 5%;
+}
+.invite .content .btn-wrap .map-btn {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  font-size: 13px;
+  font-family: "SVN-GothamBook", sans-serif;
+  width: 158px;
+  padding: 1% 0;
+  background-color: #dba7b2;
+  border-radius: 15px;
+}
+.invite .content .text-size-10 {
+  font-size: 10px;
+}
+.invite .content .text-size-9 {
+  font-size: 9.11px;
+}
+.invite .content .text-size-7 {
+  font-size: 7px;
+}
+@media (max-width: 500px) {
+  .invite .content .ivitation-img {
+    max-width: 64.6vw;
+  }
+  .invite .content .photo-box {
+    max-width: 48.6vw;
+  }
+  .invite .content .photo-box img.flower-01 {
+    width: 15vw;
+  }
+  .invite .content .date-block .date-main {
+    font-size: 6.6vw;
+  }
+  .invite .content .date-block .date-sub {
+    font-size: 2.4vw;
+  }
+  .invite .content .divider-box {
+    max-width: 1.8vw;
+  }
+  .invite .content .location-block .name {
+    font-size: 6.7vw;
+  }
+  .invite .content .btn-wrap .map-btn {
+    font-size: 2.6vw;
+    width: 31.6vw;
+  }
+  .invite .content .text-size-10 {
+    font-size: 2vw;
+  }
+  .invite .content .text-size-9 {
+    font-size: 1.822vw;
+  }
+  .invite .content .text-size-7 {
+    font-size: 1.4vw;
+  }
+}
+
+.timeline {
+  width: 100%;
+  aspect-ratio: 500/585;
+}
+.timeline .content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #000;
+  font-family: "SVN-GothamBook", sans-serif;
+}
+.timeline .timeline-items {
+  width: 100%;
+  max-width: 488px;
+  aspect-ratio: 488/520;
+  background: url("../../assets/images/timeline_bg.png") no-repeat center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 19%;
+}
+.timeline .timeline-items .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 3%;
+}
+.timeline .timeline-items .item .icon {
+  max-width: 21px;
+  width: 100%;
+  margin-bottom: 1%;
+}
+.timeline .timeline-items .item .icon img {
+  width: 100%;
+  height: auto;
+}
+.timeline .timeline-items .item .text-box p {
+  font-family: "SVN-GothamBook", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 3%;
+  font-size: 9px;
+}
+.timeline .timeline-items .item .text-box p.time-and-title span {
+  font-family: "SVN-gothamBold", sans-serif;
+}
+.timeline .timeline-items .item:nth-child(2) .icon {
+  max-width: 27px;
+}
+@media (max-width: 500px) {
+  .timeline .timeline-items .item .icon {
+    max-width: 4.2vw;
+  }
+  .timeline .timeline-items .item .text-box p {
+    font-size: 1.8vw;
+  }
+  .timeline .timeline-items .item:nth-child(3) .icon {
+    max-width: 5.4vw;
+  }
+}
+
+.dresscode {
+  width: 100%;
+  aspect-ratio: 500/350;
+}
+.dresscode .content {
+  width: 100%;
+  font-family: "SVN-GothamBook", sans-serif;
+}
+.dresscode .content h2 {
+  font-family: "MTDPortrait", sans-serif;
+  font-size: 45px;
+  font-weight: 300;
+  color: #dba7b2;
+}
+.dresscode .content p {
+  padding-bottom: 1%;
+}
+.dresscode .content p .bold {
+  font-family: "SVN-gothamBold", sans-serif;
+}
+.dresscode .content p.title {
+  margin-bottom: 3%;
+}
+.dresscode .content .vi {
+  font-style: italic;
+}
+.dresscode .content .section .vi {
+  font-style: italic;
+}
+.dresscode .content .outdoor {
+  margin-top: 5%;
+}
+.dresscode .content .outdoor .color-palette {
+  margin: 5% 0 3%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.dresscode .content .outdoor .color-palette .color-circle {
+  max-width: 38px;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.4588235294);
+}
+.dresscode .content .outdoor .color-palette .color-circle:nth-child(1) {
+  transform: translateX(50%);
+}
+.dresscode .content .outdoor .color-palette .color-circle:nth-child(2) {
+  transform: translateX(25%);
+}
+.dresscode .content .outdoor .color-palette .color-circle:nth-child(4) {
+  transform: translateX(-25%);
+}
+.dresscode .content .outdoor .color-palette .color-circle:nth-child(5) {
+  transform: translateX(-50%);
+}
+.dresscode .content .divider {
+  max-width: 9px;
+  width: 100%;
+  margin: 10% auto;
+}
+.dresscode .content .divider img {
+  width: 100%;
+  height: auto;
+}
+.dresscode .text-size-10 {
+  font-size: 10px;
+}
+.dresscode .text-size-8 {
+  font-size: 8px;
+}
+@media (max-width: 500px) {
+  .dresscode .content h2 {
+    font-size: 9vw;
+  }
+  .dresscode .content .vi {
+    font-size: 1.5vw;
+  }
+  .dresscode .content .outdoor .color-palette {
+    transform: translateX(2%);
+  }
+  .dresscode .content .outdoor .color-palette .color-circle {
+    max-width: 7.6vw;
+  }
+  .dresscode .content .indoor .color-grid {
+    max-width: 40vw;
+  }
+  .dresscode .content .indoor .color-grid .color-swatch {
+    max-width: 7.6vw;
+  }
+  .dresscode .content .text-size-10 {
+    font-size: 2vw;
+  }
+  .dresscode .content .text-size-8 {
+    font-size: 1.6vw;
+  }
+}
+
+.highlight {
+  width: 100%;
+}
+.highlight .content {
+  width: 100%;
+  aspect-ratio: 500/600;
+  position: relative;
+  perspective: 1000px;
+}
+.highlight .content .main {
+  width: 80%;
+  height: 100%;
+  position: relative;
+}
+.highlight .content .main .bg {
+  position: absolute;
+  left: -27%;
+  bottom: 18%;
+  background-color: #f3e8eb;
+  max-width: 400px;
+  width: 100%;
+  aspect-ratio: 300/310;
+  transform: rotate(13deg);
+}
+.highlight .content .main .couple-img {
+  position: absolute;
+  left: -10%;
+  bottom: 12%;
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  transform: rotate(7deg);
+}
+.highlight .content img.highlight_couple_img {
+  position: absolute;
+  width: 100%;
+  max-width: 62%;
+  left: 0;
+}
+.highlight .content img.group_flower {
+  position: absolute;
+  width: 100%;
+  max-width: 68%;
+  right: 0;
+  bottom: 0;
+}
+.highlight .content .sparkle-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 3;
+}
+@media (max-width: 500px) {
+  .highlight .content .main .bg {
+    max-width: 80vw;
+  }
+  .highlight .content .main .couple-img {
+    max-width: 60vw;
+  }
+}
+
+.sparkle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+  border-radius: 50%;
+  filter: drop-shadow(0 0 6px #fff);
+  opacity: 0;
+}
+
+.album {
+  width: 100%;
+}
+.album .content {
+  width: 100%;
+}
+.album .content h2 {
+  font-family: "MTDPortrait", sans-serif;
+  font-size: 45px;
+  font-weight: 300;
+  color: #dba7b2;
+  margin: 10% 0 7%;
+}
+.album .content .swiper {
+  width: 100%;
+  aspect-ratio: 500/752;
+  margin: 0 auto;
+  padding-bottom: 10%;
+}
+.album .content .swiper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.album .content .swiper .swiper-button-next,
+.album .content .swiper .swiper-button-prev {
+  color: white;
+}
+.album .content .swiper .swiper-pagination-bullet-active {
+  background: #34393d;
+}
+.album .content .swiper .swiper-pagination-bullet {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+@media (max-width: 500px) {
+  .album .content h2 {
+    font-size: 9vw;
+  }
+  .album .content .swiper .swiper-button-next:after,
+  .album .content .swiper .swiper-button-prev:after {
+    font-size: 8.8vw;
+  }
+  .album .content .swiper .swiper-pagination-bullet {
+    width: 3.2vw;
+    height: 3.2vw;
+  }
+}
+
+.swiper {
+  margin: 0 auto;
+  padding: 0 0 10% !important;
+}
+
+.rsvp {
+  width: 100%;
+  background: url("../../assets/images/flowers_bg.GIF") repeat top/contain;
+}
+.rsvp .content {
+  width: 100%;
+  font-family: "SVN-GothamBook", sans-serif;
+}
+.rsvp .content .header img.decoration {
+  width: 132px;
+  height: auto;
+  margin: 10% 0 5%;
+}
+.rsvp .content .header h2 {
+  font-family: "MTDPortrait", sans-serif;
+  font-size: 45px;
+  font-weight: 300;
+  color: #dba7b2;
+}
+.rsvp .content .header p {
+  line-height: 1.8;
+}
+.rsvp .content .header p.lead {
+  padding: 0 11%;
+  margin-bottom: 3%;
+  margin-top: 3%;
+}
+.rsvp .content .header p.vi-title {
+  margin: 4% 0 8%;
+}
+.rsvp .content .rsvp-form {
+  display: block;
+  padding: 5% 9%;
+}
+.rsvp .content .rsvp-form .button-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6%;
+  margin-bottom: 6%;
+}
+.rsvp .content .rsvp-form .button-group .radio-wrapper {
+  position: relative;
+}
+.rsvp .content .rsvp-form .button-group .radio-wrapper input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.rsvp .content .rsvp-form .button-group .radio-label {
+  display: block;
+  padding: 4%;
+  border-radius: 8px;
+  background: #f8e9ee;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  text-align: center;
+}
+.rsvp .content .rsvp-form .button-group .radio-label:hover {
+  background: #dba7b2;
+}
+.rsvp .content .rsvp-form .button-group .radio-wrapper input[type=radio]:checked + .radio-label {
+  background: #dba7b2;
+  color: white;
+}
+.rsvp .content .rsvp-form .form-group {
+  margin-bottom: 2%;
+}
+.rsvp .content .rsvp-form .form-group input[type=text],
+.rsvp .content .rsvp-form .form-group input[type=number],
+.rsvp .content .rsvp-form .form-group textarea {
+  font-family: "SVN-GothamBook", sans-serif;
+  width: 100%;
+  padding: 2% 4%;
+  border-radius: 8px;
+  background: #f8e9ee;
+  font-size: 10px;
+  color: #333;
+  outline: none;
+  border: none;
+  transition: border-color 0.3s ease;
+}
+.rsvp .content .rsvp-form .form-group input[type=text]:focus,
+.rsvp .content .rsvp-form .form-group input[type=number]:focus,
+.rsvp .content .rsvp-form .form-group textarea:focus {
+  outline: none;
+}
+.rsvp .content .rsvp-form .form-group textarea {
+  aspect-ratio: 500/100;
+  resize: vertical;
+  font-family: inherit;
+}
+.rsvp .content .rsvp-form .form-group textarea::placeholder {
+  white-space: pre-line; /* Cho phép hiển thị xuống dòng trong placeholder */
+}
+.rsvp .content .rsvp-form .form-group.guest-number {
+  display: flex;
+  justify-content: space-between;
+}
+.rsvp .content .rsvp-form .form-group.guest-number label {
+  width: 35%;
+}
+.rsvp .content .rsvp-form .form-group.guest-number input {
+  width: 62%;
+}
+.rsvp .content .rsvp-form .form-group.dietary {
+  margin: 8% 0 10%;
+}
+.rsvp .content .rsvp-form .form-group.dietary p {
+  margin-bottom: 3%;
+}
+.rsvp .content .rsvp-form .form-group.dietary p.subtitle {
+  margin-bottom: 3%;
+}
+.rsvp .content .rsvp-form .form-group.other {
+  margin-bottom: 8%;
+}
+.rsvp .content .rsvp-form .form-group.guest-info {
+  margin-bottom: 2%;
+}
+.rsvp .content .rsvp-form .form-group.guest-info .dietary-label {
+  margin-bottom: 2%;
+}
+.rsvp .content .rsvp-form .form-group.guest-info .subtitle {
+  margin-bottom: 3%;
+}
+.rsvp .content .rsvp-form .message {
+  text-align: center;
+  margin: 10% 0 4%;
+}
+.rsvp .content .rsvp-form .message p {
+  margin-bottom: 2%;
+}
+.rsvp .content .rsvp-form .submit-btn {
+  width: 39%;
+  padding: 2% 0;
+  background: #dba7b2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 9.11px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background 0.3s ease;
+  margin: 5% 0 10%;
+}
+.rsvp .content .rsvp-form .submit-btn:hover {
+  background: rgb(128, 47, 85);
+  opacity: 0.9;
+}
+.rsvp .content .rsvp-form .submit-btn:active {
+  transform: scale(0.98);
+}
+.rsvp label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "SVN-GothamBook", sans-serif;
+  margin-bottom: 2%;
+  text-transform: uppercase;
+  font-size: 9.11px;
+}
+.rsvp .text-size-10 {
+  font-size: 9.11px;
+}
+.rsvp .text-size-8 {
+  font-size: 8px;
+}
+@media (max-width: 500px) {
+  .rsvp .content .header img.decoration {
+    width: 26.4vw;
+  }
+  .rsvp .content .header h2 {
+    font-size: 9vw;
+  }
+  .rsvp .content .header p.vi-title {
+    font-size: 2.2vw;
+  }
+  .rsvp .content .divider img {
+    width: 1.7vw;
+  }
+  .rsvp .content .text-size-10, .rsvp .content label {
+    font-size: 1.822vw;
+  }
+  .rsvp .content .rsvp-form .form-group input[type=text],
+  .rsvp .content .rsvp-form .form-group input[type=number],
+  .rsvp .content .rsvp-form .form-group textarea {
+    font-size: 2vw;
+  }
+  .rsvp .content .rsvp-form .submit-btn {
+    font-size: 1.822vw;
+  }
+}
+
+.memory-collage {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5% 6% 0;
+}
+.memory-collage .content {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 500/580;
+  position: relative;
+  perspective: 1000px;
+}
+.memory-collage .content .box-imgs {
+  max-width: 280px;
+  position: absolute;
+  aspect-ratio: 298/278;
+  background-color: #f4e4e9;
+  padding-top: 3%;
+}
+.memory-collage .content .box-imgs img {
+  width: 90%;
+  aspect-ratio: 5/4;
+  object-fit: cover;
+}
+.memory-collage .content .box-imgs:nth-child(2) {
+  top: 5%;
+  left: 0;
+  transform: rotate(5deg);
+}
+.memory-collage .content .box-imgs:nth-child(2) img {
+  object-position: 100% 39%;
+}
+.memory-collage .content .box-imgs:nth-child(3) {
+  right: 5%;
+  bottom: 5%;
+  transform: rotate(-5deg);
+}
+.memory-collage .content .box-imgs:nth-child(3) img {
+  object-position: 100% 77%;
+}
+.memory-collage .content img.flower-collage {
+  position: absolute;
+}
+.memory-collage .content img.flower-collage-1 {
+  width: 247px;
+  height: auto;
+  top: -11%;
+  right: 14%;
+}
+.memory-collage .content img.flower-collage-2 {
+  width: 203px;
+  height: auto;
+  top: 30%;
+  left: 3%;
+}
+.memory-collage .content img.flower-collage-3 {
+  width: 111px;
+  height: auto;
+  top: -4%;
+  right: 26%;
+}
+@media (max-width: 500px) {
+  .memory-collage .content .box-imgs {
+    max-width: 56vw;
+  }
+  .memory-collage .content img.flower-collage-1 {
+    width: 49.4vw;
+  }
+  .memory-collage .content img.flower-collage-2 {
+    width: 40.6vw;
+  }
+  .memory-collage .content img.flower-collage-3 {
+    width: 22.2vw;
+  }
+}
+
+.button-links {
+  width: 100%;
+  background: url("../../assets/images/flowers_bg.GIF") no-repeat 100% 30%/contain;
+}
+.button-links .content {
+  width: 100%;
+  font-family: "SVN-GothamBook", sans-serif;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 8% 0 0%;
+  font-size: 10px;
+}
+.button-links .content .link-box h2 {
+  font-size: 45px;
+  margin-bottom: 3%;
+}
+.button-links .content .link-box .sub-title {
+  text-transform: uppercase;
+}
+.button-links .content .link-box .description {
+  line-height: 1.8;
+  margin: 10% 0 2%;
+  text-transform: uppercase;
+}
+.button-links .content .link-box .vi {
+  line-height: 1.8;
+  margin-bottom: 2%;
+}
+.button-links .content .link-box span.bold {
+  font-family: "SVN-gothamBold", sans-serif;
+}
+.button-links .content .link-box.qrcode h2 {
+  margin-bottom: 8%;
+}
+.button-links .content h2 {
+  font-family: "MTDPortrait", sans-serif;
+  color: #dba7b2;
+  font-weight: 300;
+}
+.button-links .content .divider {
+  margin: 7% 0 10%;
+}
+.button-links .content .divider img {
+  max-width: 132px;
+  width: 100%;
+  height: auto;
+}
+.button-links .content .btn-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button-links .content .btn-box .action-btn {
+  width: 30%;
+  font-family: "SVN-gothamBold", sans-serif;
+  text-decoration: none;
+  padding: 1% 0 2%;
+  background: #dba7b2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 9.11px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background 0.3s ease;
+  margin: 2% 0 2%;
+  display: block;
+}
+.button-links .content .qrcode {
+  width: 100%;
+  aspect-ratio: 500/564;
+  background: url("../../assets/images/end_bg.png") no-repeat center bottom/contain;
+}
+@media (max-width: 500px) {
+  .button-links .content {
+    font-size: 2vw;
+  }
+  .button-links .content .divider img {
+    max-width: 26.4vw;
+  }
+  .button-links .content .memories h2 {
+    font-size: 9vw;
+  }
+  .button-links .content .action-btn {
+    font-size: 1.822vw;
+  }
+  .button-links .content .btn-box .action-btn {
+    font-size: 1.822vw;
+  }
+}
+
+.qrcode-box {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.qrcode-box .item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.qrcode-box .item .info {
+  margin-bottom: 2%;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.qrcode-box .item .qrcode-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.qrcode-box .item .qrcode-img img {
+  width: 30%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+div:where(.swal2-container) div:where(.swal2-html-container) {
+  padding: 0 !important;
+}
+
+/* QR code */
+div:where(.swal2-container) img:where(.swal2-image) {
+  margin: 0 auto 1em !important;
+}
+
+@media (max-width: 500px) {
+  div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
+    font-size: 3.2vw;
+  }
+  .qrcode-box .item .info {
+    font-size: 2.8vw;
+  }
+  div:where(.swal2-container) div:where(.swal2-actions) {
+    margin: 4vw;
+  }
+}
+.end {
+  width: 100%;
+}
+.end .content {
+  width: 100%;
+  color: white;
+  padding: 0 8%;
+  font-family: "SVN-GothamBook", sans-serif;
+}
+.end .content p {
+  font-size: 9.11px;
+  line-height: 1.8;
+  text-transform: uppercase;
+}
+.end .content .importan {
+  font-weight: 700;
+}
+.end .content .divider {
+  margin: 10% 0;
+}
+.end .content .divider img {
+  width: 8.5px;
+  height: auto;
+}
+@media (max-width: 500px) {
+  .end .content p {
+    font-size: 1.822vw;
+  }
+  .end .content .divider img {
+    width: 1.7vw;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

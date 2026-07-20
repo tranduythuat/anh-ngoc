@@ -1,0 +1,184 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.button-links {
+    width: 100%;
+    background: url('../../assets/images/flowers_bg.GIF') no-repeat 100% 30% / contain;
+
+    .content {
+        width: 100%;
+        font-family: $font-gotham;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        padding: 8% 0 0%;
+        font-size: 10px;
+
+        .link-box {
+            h2 {
+                font-size: 45px;
+                margin-bottom: 3%;
+            }
+
+            .sub-title {
+                text-transform: uppercase;
+            }
+
+            .description {
+                line-height: 1.8;
+                margin: 10% 0 2%;
+                text-transform: uppercase;
+
+            }
+
+            .vi {
+                line-height: 1.8;
+                margin-bottom: 2%;
+            }
+
+            span.bold {
+                font-family: $font-gothamBold;
+            }
+
+            &.qrcode {
+                h2 {
+                    margin-bottom: 8%;
+                }
+            }
+        }
+
+        h2 {
+            font-family: $font-main;
+            color: $title-color;
+            font-weight: 300;
+        }
+
+        .divider {
+            margin: 7% 0 10%;
+
+            img {
+                max-width: 132px;
+                width: 100%;
+                height: auto
+            }
+        }
+
+        .btn-box {
+            @include flex-center;
+
+            .action-btn {
+                width: 30%;
+                font-family: $font-gothamBold;
+                text-decoration: none;
+                padding: 1% 0 2%;
+                background: #dba7b2ff;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                font-weight: 600;
+                font-size: 9.11px;
+                cursor: pointer;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                transition: background 0.3s ease;
+                margin: 2% 0 2%;
+                display: block;
+            }
+        }
+
+        .qrcode {
+            width: 100%;
+            aspect-ratio: 500 / 564;
+            background: url('../../assets/images/end_bg.png') no-repeat center bottom / contain;
+        }
+
+    }
+
+    @media (max-width: 500px) {
+        .content {
+            font-size: calc((10 / 500) * 100vw);
+
+            .divider {
+                img {
+                    max-width: calc((132 / 500) * 100vw);
+                }
+            }
+
+            .memories {
+                h2 {
+                    font-size: calc((45 / 500) * 100vw);
+                }
+            }
+
+            .action-btn {
+                font-size: calc((9.11 / 500) * 100vw);
+            }
+
+            .btn-box {
+                .action-btn {
+                    font-size: calc((9.11 / 500) * 100vw);
+                }
+            }
+
+        }
+    }
+}
+
+.qrcode-box {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.qrcode-box .item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.qrcode-box .item .info {
+    margin-bottom: 2%;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.qrcode-box .item .qrcode-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.qrcode-box .item .qrcode-img img {
+    width: 30%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+div:where(.swal2-container) div:where(.swal2-html-container) {
+    padding: 0 !important;
+}
+
+/* QR code */
+div:where(.swal2-container) img:where(.swal2-image) {
+    margin: 0 auto 1em !important;
+}
+
+@media (max-width: 500px) {
+    div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
+        font-size: calc((16 / 500) * 100vw);
+    }
+
+    .qrcode-box .item .info {
+        font-size: calc((14 / 500) * 100vw);
+    }
+
+    div:where(.swal2-container) div:where(.swal2-actions) {
+        margin: calc((20/500) * 100vw);
+    }
+}

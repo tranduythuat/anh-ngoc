@@ -1,0 +1,55 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.hero {
+    width: 100%;
+    .content {
+        aspect-ratio: 500 / 750;
+        background:
+            // url('../../assets/images/hero_bg.png') no-repeat center / contain, 
+            url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/TuanAnh-HongNgoc/1.webp') no-repeat 55% 72% / 200%;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        color: #fff;
+        position: relative;
+        perspective: 1000px;
+        .couple-name {
+            width: 300px;
+            font-size: 46px;
+            font-family: $font-main;
+            transform: rotate(-5deg);
+            margin-top: 5%;
+            .husband, .wife {
+                padding: 8% 2%;
+            }
+            .husband {
+                text-align: right;
+            }
+            .wife {
+                text-align: left;
+                position: relative;
+                top: -15%;
+            }
+        }
+        img.couple_name {
+            width: 100%;
+            max-width: 376px;
+            position: absolute;
+            top: 5%;
+            left: 14%;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .content {
+            img.couple_name {
+                max-width: calc((376 / 500) * 100vw);
+            }
+
+        }
+    }
+}

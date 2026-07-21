@@ -1,0 +1,119 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.countdown {
+    .content {
+        width: 100%;
+        @include flex-center;
+        flex-direction: column;
+        padding: 20% 0 15%;
+
+        .divider img {
+            width: 132px;
+            height: auto;
+            margin: 10% 0 5%;
+        }
+        
+        
+        .title {
+            font-size: 45px;
+            // letter-spacing: 3px;
+            font-family: $font-main;
+            line-height: 1;
+            margin-bottom: 1%;
+            color: $title-color;
+        }
+
+        .sub_text {
+            margin: 5% 0 5%;
+            // letter-spacing: 1.4px;
+            font-family: $font-gothamLight;
+            font-size: 12px;
+        }
+
+        .countdown-box {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+            width: 85%;
+            gap: 3%;
+    
+            .time-box {
+                text-align: center;
+                flex: 1;
+                background-color: $secondary-color;
+                color: rgb(201, 135, 150);
+                padding: 2% 0;
+                border-radius: 10px;
+                .number {
+                    font-size: 32px;
+                    font-weight: 100;
+                    line-height: 1;
+                    transition: transform 0.3s ease, opacity 0.3s ease;
+                    // font-family: $font-Lora;
+                }
+        
+                .label {
+                    font-size: 10.5px;
+                    letter-spacing: 1px;
+                    font-weight: 500;
+                }
+            }
+        }
+        .invite_text {
+            margin: 25% 0 8%;
+            // font-family: $font-ICIEL-RUKOLA;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: 2px;
+            // img {
+            //     max-width: 286px;
+            // }
+        }
+        .cake_img {
+            img {
+                max-width: 78px;
+            }
+        }
+    }
+
+    @media (max-width: 500px) {
+        .content {
+            .title {
+                font-size: calc((45 / 500) * 100vw);
+                // letter-spacing: calc((3 / 500) * 100vw);
+            }
+
+            .sub_text {
+                font-size: calc((12 / 500) * 100vw);
+                // letter-spacing: calc((1.4 / 500) * 100vw);
+            }
+    
+            .countdown-box {
+                .time-box {
+                    .number {
+                        font-size: calc((32 / 500) * 100vw);
+                    }
+                    .label {
+                        font-size: calc((10.5 / 500) * 100vw);
+                        letter-spacing: calc((1 / 500) * 100vw);
+                    }
+                }
+        
+            }
+
+            .invite_text {
+                font-size: calc((24 / 500) * 100vw);
+                letter-spacing: calc((2 / 500) * 100vw);
+            }
+            .cake_img {
+                img {
+                    max-width: calc((78 / 500) * 100vw);
+                }
+            }
+        }
+    }
+}

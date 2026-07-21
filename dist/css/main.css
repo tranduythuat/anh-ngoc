@@ -201,6 +201,10 @@ header {
   left: 14%;
 }
 @media (max-width: 500px) {
+  .hero .content .couple-name {
+    width: 60vw;
+    font-size: 9.2vw;
+  }
   .hero .content img.couple_name {
     max-width: 75.2vw;
   }
@@ -220,6 +224,7 @@ header {
   color: #000;
   font-family: "SVN-GothamBook", sans-serif;
   padding-top: 10%;
+  padding-bottom: 15%;
 }
 .invite .content .ivitation-img {
   max-width: 323px;
@@ -284,6 +289,7 @@ header {
   font-size: 15px;
 }
 .invite .content .location-block {
+  width: 100%;
   margin-top: 10%;
 }
 .invite .content .location-block .label {
@@ -295,7 +301,7 @@ header {
 .invite .content .location-block .name {
   font-family: "MTDPortrait", sans-serif;
   font-size: 33.5px;
-  font-weight: 300;
+  font-weight: 600;
   color: #dba7b2;
   line-height: 1.5;
 }
@@ -313,6 +319,7 @@ header {
 }
 .invite .content .btn-wrap {
   margin-top: 5%;
+  position: relative;
 }
 .invite .content .btn-wrap .map-btn {
   display: block;
@@ -320,8 +327,8 @@ header {
   color: #fff;
   font-size: 13px;
   font-family: "SVN-GothamBook", sans-serif;
-  width: 158px;
-  padding: 1% 0;
+  width: 220px;
+  padding: 3% 0;
   background-color: #dba7b2;
   border-radius: 15px;
 }
@@ -766,6 +773,7 @@ header {
 }
 .rsvp .content .rsvp-form .form-group.guest-number label {
   width: 35%;
+  margin: auto;
 }
 .rsvp .content .rsvp-form .form-group.guest-number input {
   width: 62%;
@@ -861,6 +869,92 @@ header {
   }
 }
 
+.countdown .content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20% 0 15%;
+}
+.countdown .content .divider img {
+  width: 132px;
+  height: auto;
+  margin: 10% 0 5%;
+}
+.countdown .content .title {
+  font-size: 45px;
+  font-family: "MTDPortrait", sans-serif;
+  line-height: 1;
+  margin-bottom: 1%;
+  color: #dba7b2;
+}
+.countdown .content .sub_text {
+  margin: 5% 0 5%;
+  font-family: "SVN-GothamLight", sans-serif;
+  font-size: 12px;
+}
+.countdown .content .countdown-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+  width: 85%;
+  gap: 3%;
+}
+.countdown .content .countdown-box .time-box {
+  text-align: center;
+  flex: 1;
+  background-color: #f8e9ee;
+  color: rgb(201, 135, 150);
+  padding: 2% 0;
+  border-radius: 10px;
+}
+.countdown .content .countdown-box .time-box .number {
+  font-size: 32px;
+  font-weight: 100;
+  line-height: 1;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.countdown .content .countdown-box .time-box .label {
+  font-size: 10.5px;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+.countdown .content .invite_text {
+  margin: 25% 0 8%;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: 2px;
+}
+.countdown .content .cake_img img {
+  max-width: 78px;
+}
+@media (max-width: 500px) {
+  .countdown .content .title {
+    font-size: 9vw;
+  }
+  .countdown .content .sub_text {
+    font-size: 2.4vw;
+  }
+  .countdown .content .countdown-box .time-box .number {
+    font-size: 6.4vw;
+  }
+  .countdown .content .countdown-box .time-box .label {
+    font-size: 2.1vw;
+    letter-spacing: 0.2vw;
+  }
+  .countdown .content .invite_text {
+    font-size: 4.8vw;
+    letter-spacing: 0.4vw;
+  }
+  .countdown .content .cake_img img {
+    max-width: 15.6vw;
+  }
+}
+
 .memory-collage {
   width: 100%;
   display: flex;
@@ -891,6 +985,7 @@ header {
   top: 5%;
   left: 0;
   transform: rotate(5deg);
+  box-shadow: 2px 7px 5px #aaaaaa;
 }
 .memory-collage .content .box-imgs:nth-child(2) img {
   object-position: 100% 39%;
@@ -899,6 +994,7 @@ header {
   right: 5%;
   bottom: 5%;
   transform: rotate(-5deg);
+  box-shadow: 2px 7px 5px #aaaaaa;
 }
 .memory-collage .content .box-imgs:nth-child(3) img {
   object-position: 100% 77%;

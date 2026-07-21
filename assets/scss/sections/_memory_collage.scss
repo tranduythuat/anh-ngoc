@@ -29,6 +29,7 @@
             top: 5%;
             left: 0;
             transform: rotate(5deg);
+            box-shadow: 2px 7px 5px #aaaaaa;
             img {
                 object-position: 100% 39%;
             }
@@ -38,6 +39,7 @@
             right: 5%;
             bottom: 5%;
             transform: rotate(-5deg);
+            box-shadow: 2px 7px 5px #aaaaaa;
             img {
                 object-position: 100% 77%;
             }

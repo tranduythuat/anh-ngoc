@@ -1,4 +1,6 @@
 // Kích hoạt ScrollTrigger
+const qs = (selector, parent = document) => parent.querySelector(selector);
+
 gsap.registerPlugin(ScrollTrigger);
 // Gọi các hiệu ứng có sẵn
 document.addEventListener("DOMContentLoaded", () => {
@@ -127,6 +129,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (form) {
     form.addEventListener("submit", (e) => handleFormSubmit(e));
   }
+
+  startCountdown(new Date("2026-09-19T18:00:00"));
 });
 
 function toggleQR(e) {
@@ -154,6 +158,46 @@ function toggleQR(e) {
       confirmButtonColor: "#dba7b2ff"
   });
 }
+
+ /* ======================================================
+       COUNTDOWN
+    ====================================================== */
+
+  function startCountdown(targetDate) {
+    const daysEl = qs("#days");
+    const hoursEl = qs("#hours");
+    const minsEl = qs("#mins");
+    const secsEl = qs("#secs");
+
+    if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+
+    const timer = setInterval(update, 1000);
+    update();
+
+    function update() {
+      const distance = targetDate - Date.now();
+
+      if (distance <= 0) {
+        clearInterval(timer);
+        daysEl.textContent =
+          hoursEl.textContent =
+          minsEl.textContent =
+          secsEl.textContent =
+          "00";
+        return;
+      }
+
+      const days = Math.floor(distance / 86400000);
+      const hours = Math.floor((distance % 86400000) / 3600000);
+      const mins = Math.floor((distance % 3600000) / 60000);
+      const secs = Math.floor((distance % 60000) / 1000);
+
+      daysEl.textContent = String(days).padStart(2, "0");
+      hoursEl.textContent = String(hours).padStart(2, "0");
+      minsEl.textContent = String(mins).padStart(2, "0");
+      secsEl.textContent = String(secs).padStart(2, "0");
+    }
+  }
 
 async function handleFormSubmit(e) {
   e.preventDefault();

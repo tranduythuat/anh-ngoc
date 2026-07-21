@@ -46,6 +46,11 @@
 
     @media (max-width: 500px) {
         .content {
+            .couple-name {
+                width: calc((300 / 500) * 100vw);
+                font-size: calc((46 / 500) * 100vw);
+            }
+
             img.couple_name {
                 max-width: calc((376 / 500) * 100vw);
             }

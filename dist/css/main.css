@@ -552,7 +552,7 @@ header {
   perspective: 1000px;
 }
 .highlight .content .main {
-  width: 80%;
+  width: 60%;
   height: 100%;
   position: relative;
 }
@@ -875,7 +875,7 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 20% 0 15%;
+  padding: 10% 0 20%;
 }
 .countdown .content .divider img {
   width: 132px;

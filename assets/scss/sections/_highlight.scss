@@ -10,7 +10,7 @@
         perspective: 1000px;
 
         .main {
-            width: 60%;
+            width: 80%;
             height: 100%;
             position: relative;
             .bg {
@@ -76,9 +76,12 @@
 .sparkle {
     position: absolute;
     width: 10px;
-    height: 10px;
+    aspect-ratio: 1;
     background: radial-gradient(circle, rgba(255,255,255,0.9), rgba(255,255,255,0));
     border-radius: 50%;
     filter: drop-shadow(0 0 6px #fff);
     opacity: 0;
+    @media (max-width: 500px) {
+        width: calc((10 / 500) * 100vw);
+    }
 }

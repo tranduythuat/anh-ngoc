@@ -164,7 +164,7 @@ header {
 }
 .hero .content {
   aspect-ratio: 500/750;
-  background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/TuanAnh-HongNgoc/1.webp") no-repeat 55% 72%/200%;
+  background: url("../../assets/images/hero_bg.GIF") no-repeat center/contain, url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/TuanAnh-HongNgoc/1.webp") no-repeat 55% 72%/200%;
   width: 100%;
   height: 100%;
   display: flex;
@@ -181,8 +181,10 @@ header {
   font-family: "MTDPortrait", sans-serif;
   transform: rotate(-5deg);
   margin-top: 5%;
+  font-weight: 600;
 }
-.hero .content .couple-name .husband, .hero .content .couple-name .wife {
+.hero .content .couple-name .husband,
+.hero .content .couple-name .wife {
   padding: 8% 2%;
 }
 .hero .content .couple-name .husband {
